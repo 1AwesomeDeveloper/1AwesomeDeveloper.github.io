@@ -1,0 +1,196 @@
+
+
+.loader {
+    margin: 50px auto;
+    border: 5px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 5px solid #3498db;
+    width: 40px;
+    height: 40px;
+    -webkit-animation: spin 2s linear infinite;
+    /* Safari */
+    animation: spin 2s linear infinite;
+    display: block;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    display: none;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+#errormsg {
+    margin: 0;
+    text-align: center;
+    color: black;
+}
+
+label {
+    display: block;
+    font-size: .8rem;
+}
+
+.grid3 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: 20px 20px;
+    align-items: center;
+    justify-items: center;
+}
+
+h3 {
+    margin: 5px;
+}
+
+input,
+.uploadbtn {
+    padding: 5px;
+    color: var(--bg-primary);
+    background-color: var(--text-secondary);
+    border-radius: 5px;
+}
+
+.uploadbtn {
+    border: solid 2px var(--text-secondary);
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+    width: 100px;
+    padding: 0;
+    height: 40px;
+    transition: .5s ease-in;
+}
+
+.uploadbtn:hover,
+.latest button:hover {
+    background-color: rgb(40, 149, 177);
+    color: black;
+    border: solid 2px var(--text-primary);
+}
+
+label {
+    margin: 5px;
+}
+
+.small {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    text-align: center;
+    display: block;
+}
+
+#content {
+    display: none;
+}
+
+.latest {
+    text-align: center;
+}
+
+.latest button, .downbtn {
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 2px var(--text-secondary);
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+    transition: .5s ease-in;
+}
+
+/* table */
+table {
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  .tbl-header {
+    background-color: var(--bg-primary);
+  }
+  
+  .tbl-content {
+    height: 300px;
+    overflow-x: auto;
+    margin-top: 0px;
+    border: 1px solid var(--bg-primary);
+  }
+  
+  th {
+    padding: 20px 15px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--text-primary);
+    text-transform: uppercase;
+  }
+  
+  td {
+    padding: 15px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 300;
+    font-size: 12px;
+    color: var(--text-secondary);
+    border-bottom: solid 1px var(--text-primary);
+  }
+  
+  /* for custom scrollbar for webkit browser*/
+  
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .table{
+      margin-top: 50px;
+  }
+
+  .count{
+      width: 50px;
+  }
+
+  button{
+      cursor: pointer;
+  }

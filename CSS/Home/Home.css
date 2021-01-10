@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+*{
+    padding:  0;
+    margin:  0;
+    font-family: 'Audiowide', cursive;
+    text-align: center;
+}
+*::placeholder{
+    color: black;
+}
+
+.topImg{
+    width: 100%;
+    float: left;
+    height: 400px;
+    filter: brightness(0.9);
+}
+
+.minibox{
+    height: 400px;
+    width: 50%;
+    float: left;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.one1{
+    background-color: brown;
+}
+
+.one2{
+    background-color: coral;
+}
+
+.two1{
+    background-color: cyan;
+}
+
+.two2{
+    background-color: rgb(204, 204, 204);
+}
+
+
+.centered {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.699);
+}
+
+
+.heading{
+    font-size: 5rem;
+    color: white;
+}
+
+.headpara{
+    color: black;
+    font-size: 1.5rem;
+    top:50%
+}
+
+.navbar{
+    z-index: 2;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    color: white;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+      
+}
+  
+.navbar ul  li {
+    float: left;
+
+}
+  
+.navbar ul  li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border: solid 2px white; 
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin-left: 60px;
+    color: white;
+}
+  
+.navbar ul li a:hover {
+    background-color: #111;
+    color
+}

@@ -1,0 +1,148 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Modal</title>
+
+    <link rel="stylesheet" href="../../../CSS/Modals/New Modal/newModal.css">
+</head>
+
+<body>
+    <header>
+        <div class="alert" id="error">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <em id="errormsg">Hello I am error</em></p>
+        </div>
+    </header>
+
+
+    <main>
+        <h1>New Modal Regestration Form</h1>
+        <hr>
+    </main>
+    <div id="regForm">
+        <form id="Form">
+            <label class="custom-field">
+                <input type="text" name="modalName" required>
+                <span class="placeholder">Modal Name</span>
+                <p><em class="red">*</em><em>Aplhanumeric(capatilized)</em></p>
+            </label>
+            <label class="custom-field">
+                <input type="text" name="modalNumber" required>
+                <span class="placeholder">Modal Number</span>
+                <p><em class="red">*</em><em>Aplhanumeric(capatilized)</em></p>
+            </label>
+            <label class="custom-field">
+                <input type="text" name="wingType" required>
+                <span class="placeholder">Wing Type</span>
+                <p><em class="red">*</em><em>Aplhabatic Only</em></p>
+            </label>
+            <label class="custom-field">
+                <input type="number" name="maxTakeOffWeight" required>
+                <span class="placeholder">Max Take Off Weight</span>
+                <p><em class="red">*</em><em>In Kg Only</em></p>
+            </label>
+            <label class="custom-field">
+                <input type="number" name="maxHeightAttainable" value="34" required>
+                <span class="placeholder">Max Height Attainable</span>
+                <p><em class="red">*</em><em>In Km Only</em></p>
+            </label>
+            <label class="custom-field">
+                <input type="number" name="compatiblePayload" required>
+                <span class="placeholder">Compatible Playload</span>
+                <p><em class="red">*</em><em>In gm Only</em></p>
+            </label>
+            <label class="custom-field">
+                <input type="text" name="droneCategoryType" required>
+                <span class="placeholder">Drone Category Type</span>
+                <p><em class="red">*</em><em>Alphabetic Only</em></p>
+            </label>
+            <label class="custom-field poo">
+                <textarea id="w3review" name="purposeOfOperation" rows="4" cols="50"></textarea>
+                <span class="placeholder">Purpose Of Operation</span>
+                <p><em class="red">*</em><em>Brief Discription of usage</em></p>
+            </label>
+            <label class="custom-field">
+                <input type="text" name="engineType" required>
+                <span class="placeholder">Engine Type</span>
+                <p><em class="red">*</em><em>Aplbatic Only</em></p>
+            </label>
+            <label class="custom-field">
+                <input type="number" name="enginePower" required>
+                <span class="placeholder">Engine Power</span>
+                <p><em class="red">*</em><em>Hosrepwer</em></p>
+            </label>
+            <label class="custom-field">
+                <input type="number" name="engineCount" required>
+                <span class="placeholder">Engine Count</span>
+                <p><em class="red">*</em><em>Number Only</em></p>
+            </label>
+            <label class="custom-field">
+                <input type="number" name="fuelCapacity" required>
+                <span class="placeholder">Fuel Capacity</span>
+                <p><em class="red">*</em><em>In Liters</em></p>
+            </label>
+            <label class="custom-field">
+                <input type="text" name="propellerDetails" required>
+                <span class="placeholder">Propeller Details</span>
+                <p><em class="red">*</em><em>Alphabetic Only</em></p>
+            </label>
+            <label class="custom-field">
+                <input type="number" name="maxEndurance" required>
+                <span class="placeholder">Max Endurance</span>
+                <p><em class="red">*</em><em>Max time of Flight</em></p>
+            </label>
+            <label class="custom-field">
+                <input type="number" name="maxRange" required>
+                <span class="placeholder">Max Range</span>
+                <p><em class="red">*</em><em>Max Communication Range</em></p>
+            </label>
+            <label class="custom-field">
+                <input type="number" name="maxSpeed" required>
+                <span class="placeholder">Max Speed</span>
+                <p><em class="red">*</em><em>In Km/sec</em></p>
+            </label>
+            <label class="custom-field">
+                <input type="number" name="length" required>
+                <span class="placeholder">Lenght</span>
+                <p><em class="red">*</em><em>In meters</em></p>
+            </label>
+            <label class="custom-field">
+                <input type="number" name="breadth" required>
+                <span class="placeholder">Breadth</span>
+                <p><em class="red">*</em><em>In meters</em></p>
+            </label>
+            <label class="custom-field">
+                <input type="number" name="height" required>
+                <span class="placeholder">Height</span>
+                <p><em class="red">*</em><em>In meters</em></p>
+            </label>
+            <label class="custom-field img" for="imagePic">
+                <input type="file" name="imagePic" accept="image/*" required id="imagePic">
+                <span class="placeholder">Image</span>
+                <p><em class="red">*</em><em>Less than 1Mb(.jpg, jpeg, png)</em></p>
+            </label>
+        </form>
+    </div>
+    <div id="loader">
+        <div id="loaderSpace"></div>
+        <div class="loader"></div>
+        <div id="loaderSpace"></div>
+    </div>
+    <div class="space">
+
+    </div>
+    <div class="sticky">
+        <span><a href="../modals.html"><button>Cancle</button></a></span>
+        <span><button onclick="registerreq()">Register</button></span>
+        <span><button><i class="fa fa-th-large" id="themeButton"></i></button></span>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../../../JS/Modals/New Modal/newModal.js"></script>
+    <script src="https://kit.fontawesome.com/e0d690f1d2.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

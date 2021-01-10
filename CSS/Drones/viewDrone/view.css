@@ -1,0 +1,193 @@
+
+
+.containerflex {
+  margin: 30px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.icons div {
+  margin: 10px 20px;
+  padding: 5px;
+  border: solid 2px rgba(0, 0, 0, 0);
+}
+
+.icons div:hover {
+  color: var(--text-primary);
+  cursor: pointer;
+  border: solid 2px var(--text-primary);
+  border-radius: 5px;
+  background-color: var(--bg-primary);
+}
+
+
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  display: none;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+#errormsg {
+  margin: 0;
+  text-align: center;
+  color: black;
+}
+
+.loaderSpace {
+  height: 20vh;
+}
+
+.loader {
+  margin: 50px auto;
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #3498db;
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 2s linear infinite;
+  /* Safari */
+  animation: spin 2s linear infinite;
+  display: block;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* drone info */
+.droneInfo hr {
+  margin: 0;
+}
+
+.droneInfo h3 {
+  margin: 5px;
+}
+
+.uuid {
+  font-size: 2rem;
+  margin: 20px 0 50px 30px;
+}
+
+.uuid div:nth-child(1) {
+  font-size: 1.3rem;
+}
+
+.grid3 {
+  margin: 20px 0 50px 20px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.grid3 div div:nth-child(1) {
+  text-transform: uppercase;
+  font-size: .81rem;
+}
+
+.grid3 div div:nth-child(2) {
+  font-size: 1.4rem;
+}
+
+/* table */
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.tbl-header {
+  background-color: var(--bg-primary);
+}
+
+.tbl-content {
+  height: 300px;
+  overflow-x: auto;
+  margin-top: 0px;
+  border: 1px solid var(--bg-primary);
+}
+
+th {
+  padding: 20px 15px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+td {
+  padding: 15px;
+  text-align: left;
+  vertical-align: middle;
+  font-weight: 300;
+  font-size: 12px;
+  color: var(--text-secondary);
+  border-bottom: solid 1px var(--text-primary);
+}
+
+/* for custom scrollbar for webkit browser*/
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.count{
+  width: 50px;
+}
+
+/* drone info */
+
+.downbtn{
+  padding: 5px;
+  border: solid 2px var(--text-secondary);
+  border-radius: 5px;
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+.downbtn:hover{
+  cursor: pointer;
+  color: var(--bg-secondary);
+  background-color: var(--text-secondary);
+}

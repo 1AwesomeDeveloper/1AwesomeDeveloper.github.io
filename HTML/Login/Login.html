@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="../../CSS/Login/Login.css">
+</head>
+<body id="top">
+    <div class="alert" id="error">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <p id="errormsg">Hello I am error</p>
+    </div>
+    <div></div><h1 class="heading">DRONE-POINT</h1></div>
+    <div class="box">
+        <h1 class="heading" id="heading">Welcome</h1>
+        <div  id="button">
+            <div>
+                <button id="Customer" onclick="loadContent('customer')" class="button">Customer</button>
+            </div>
+            <div>
+                <button id="Developer" onclick="loadContent('developer')" class="button">Developer</button>
+            </div>
+        </div>
+
+        <div id="content">
+            <div id="lrbtn">
+                <div id="customerbtn">
+                    <div>
+                        <button onclick="login('customer')" class="button">Sign-In</button>
+                    </div>
+                    <div>
+                        <button onclick="register('customer')" class="button">Sign-Up</button>
+                    </div>
+                </div>
+                <div id="developerbtn">
+                    <div>
+                        <button onclick="login('developer')" class="button">Sign-In</button>
+                    </div>
+                    <div>
+                        <button onclick="register('developer')" class="button">Sign-Up</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="reg">
+                <div id="customerreg">
+                    <form id="CRForm">
+                        <input type="email" class="button" name="email" placeholder="E-Mail">
+                        <input type="text" class="button" name="name" placeholder="Full Name">
+                        <input type="number" class="button" maxlength="10" minlength="10" name="phNumber" placeholder="Mobile">
+                        <input type="password" class="button" minlength="8" name="password" placeholder="Password">
+                        <input type="password" class="button" minlength="8" name="confPassword" placeholder="Conf. Password">
+                    </form>
+                    <div>
+                        <button onclick="registerC()" class="button">Sign-Up</button>
+                    </div>
+                </div>
+
+                <div id="developerreg">
+                    <form id="DRForm">
+                        <input type="email" class="button" name="email" placeholder="E-Mail">
+                        <input type="text" class="button" name="name" placeholder="Full Name">
+                        <input type="number" class="button" maxlength="10" minlength="10" name="phNumber" placeholder="Mobile">
+                        <input type="password" class="button" minlength="8" name="password" placeholder="Password">
+                        <input type="password" class="button" minlength="8" name="confPassword" placeholder="Conf. Password">
+                    </form>
+                    <div>
+                        <button onclick="registerD()" class="button">Sign-Up</button>
+                    </div>
+                </div>
+            </div>
+            <div id="log">
+                <div id="customerlog">
+                    <form id="CLForm">
+                        <input type="email" class="button" name="email" placeholder="E-Mail">
+                        <input type="password" class="button" minlength="8" name="password" placeholder="Password">
+                    </form>
+                    <div>
+                        <button onclick="loginC()" class="button">Sign-In</button>
+                    </div>
+                </div>
+
+                <div id="developerlog">
+                    <form id="DLForm">
+                        <input type="email" class="button" name="email" placeholder="E-Mail">
+                        <input type="password" class="button" minlength="8" name="password" placeholder="Password">
+                    </form>
+                    <div>
+                        <button onclick="loginD()" class="button">Sign-In</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="otp">
+                <div id="COtp">
+                    <div>
+                        <input type="number" class="button" name="otp" placeholder="OTP" id="customerOtp">
+                    </div>
+                    <div>
+                        <button onclick="sendOtp('customer')" class="button">Submit</button>
+                    </div>
+                </div>
+                <div id="DOtp">
+                    <div>
+                        <input type="number" class="button" name="otp" placeholder="OTP" id="developerOtp">
+                    </div>
+                    <div>
+                        <button onclick="sendOtp('developer')" class="button">Submit</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div><div class="loader" id="loader"></div></div>
+
+        <div id="back">
+            <div><strong><button class="back" onclick="back()">&#8249;</a></strong></div>
+        </div>
+    </div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../../JS/Login/Login.js"></script>
+</body>
+</html>

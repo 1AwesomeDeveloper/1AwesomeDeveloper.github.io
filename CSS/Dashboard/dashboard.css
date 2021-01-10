@@ -1,0 +1,110 @@
+
+
+.containerflex{
+  margin: 30px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.devpic{
+  flex: 1;
+}
+
+.profile{
+  flex: 2;
+}
+
+.profilebtn{
+  flex: 1;
+  text-align: center;
+}
+
+.profilebtn div button{
+  padding: 5px;
+  margin: 10px;
+  font-size: 1rem;
+  background: none;
+  color: var(--text-secondary);
+  border-radius: 10px;
+  border: solid 2px var(--text-primary);
+}
+
+.profilebtn div button:hover{
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+.devpic img{
+  border-radius: 50%;
+}
+
+.profile div{
+  padding: 10px;
+}
+.profile h3{
+  text-align: center;
+}
+.profile div span{
+  margin-left: 40px;
+  font-size: 1rem;
+}
+
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  display: none;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+#errormsg{
+  margin: 0;
+  text-align: center;
+  color: black;
+}
+
+.loaderSpace{
+    height: 20vh;
+}
+
+.loader {
+    margin: 50px auto;
+    border: 5px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 5px solid #3498db;
+    width: 40px;
+    height: 40px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    display: block;
+  }
+
+  /* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+#content{
+  display: none;
+}
