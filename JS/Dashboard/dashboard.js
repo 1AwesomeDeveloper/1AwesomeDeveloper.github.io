@@ -78,3 +78,7 @@ function unloading() {
   document.getElementById('loading').style.display = 'none'
   document.getElementById('content').style.display = 'flex'
 }
+
+function regCts(){
+  window.location.href = './RegisterCustomer/regCts.html'
+}

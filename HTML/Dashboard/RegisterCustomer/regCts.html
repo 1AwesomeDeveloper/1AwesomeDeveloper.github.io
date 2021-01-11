@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../../CSS/Dashboard/dashboard.css" />
-  <link rel="stylesheet" href="../../CSS/Navbar/navbar.css">
+  <link rel="stylesheet" href="../../../CSS/Navbar/navbar.css">
+  <link rel="stylesheet" href="../../../CSS/Dashboard/RegisterCustomer/regCts.css" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet" />
   <title>Dashboard</title>
 </head>
@@ -14,7 +14,7 @@
   <nav class="navbar">
     <ul class="navbar-nav">
       <li class="logo">
-        <a href="../Dashboard/dashboard.html" class="nav-link">
+        <a href="../../Dashboard/dashboard.html" class="nav-link">
           <span class="link-text logo-text">Drone-Point</span>
           <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="angle-double-right" role="img"
             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
@@ -32,7 +32,7 @@
       </li>
 
       <li class="nav-item">
-        <a href="../Dashboard/dashboard.html" class="nav-link">
+        <a href="../../Dashboard/dashboard.html" class="nav-link">
           <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="cat" role="img"
             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-cat fa-w-16 fa-9x">
             <g class="fa-group">
@@ -49,7 +49,7 @@
       </li>
 
       <li class="nav-item">
-        <a href="../Verify/verify.html" class="nav-link">
+        <a href="../../Verify/verify.html" class="nav-link">
           <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="alien-monster" role="img"
             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"
             class="svg-inline--fa fa-alien-monster fa-w-18 fa-9x">
@@ -65,7 +65,7 @@
       </li>
 
       <li class="nav-item">
-        <a href="../Modals/modals.html" class="nav-link">
+        <a href="../../Modals/modals.html" class="nav-link">
           <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="space-station-moon-alt" role="img"
             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
             class="svg-inline--fa fa-space-station-moon-alt fa-w-16 fa-5x">
@@ -83,7 +83,7 @@
       </li>
 
       <li class="nav-item">
-        <a href="../Drones/Drones.html" class="nav-link">
+        <a href="../../Drones/Drones.html" class="nav-link">
           <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="space-shuttle" role="img"
             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"
             class="svg-inline--fa fa-space-shuttle fa-w-20 fa-5x">
@@ -101,7 +101,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" onclick="logout('../Login/Login.html')">
+        <a class="nav-link" onclick="logout('../../Login/Login.html')">
           <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="space-shuttle" role="img"
             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"
             class="svg-inline--fa fa-sign-out-alt fa-w-20 fa-5x">
@@ -171,7 +171,7 @@
       <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
       <p id="errormsg"></p>
     </div>
-    <h1>Dashboard/Profile</h1>
+    <h1>Register Customer</h1>
     <hr>
 
     <div id="loading">
@@ -180,40 +180,28 @@
       <div class="loaderSpace"></div>
     </div>
 
-    <div class="containerflex" id="content">
-      <div class="devpic">
-        <img src="../../IMAGES/developerProfile.jpg" alt="" class="inline">
-      </div>
-      <div class="profile">
-        <h3 id="welcome">Welcome Ankit Sharma, Good to see you back</h3>
+    <div id="content">
+      <div>
+        <form id="Form">
+            <input type="email" class="button" name="email" placeholder="E-Mail">
+            <input type="text" class="button" name="name" placeholder="Full Name">
+            <input type="number" class="button" maxlength="10" minlength="10" name="phNumber" placeholder="Mobile">
+            <input type="password" class="button" minlength="8" name="password" placeholder="Password">
+            <input type="password" class="button" minlength="8" name="confPassword" placeholder="Conf. Password">
+        </form>
+        <hr>
         <div>
-          <span><strong>Email</strong></span> <span id="email"></span>
+            <button onclick="register()" class="button">Register</button>
         </div>
-        <div>
-          <span><strong>Name</strong></span> <span id="name"></span>
-        </div>
-        <div>
-          <span><strong>Mobile</strong></span> <span id="mobile"></span>
-        </div>
-      </div>
-      <div class="profilebtn">
-        <div>
-          <button onclick="logout()">Logout</button>
-        </div>
-        <div>
-          <button onclick="regCts()">Register Customer</button>
-        </div>
-        <div>
-          <button onclick="deleteAcc()">Delete Account</button>
-        </div>
-      </div>
     </div>
+    </div>
+    
 
-    <hr>
+    
   </main>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="../../JS/Dashboard/dashboard.js"></script>
-  <script src="../../JS/Common/common.js"></script>
+  <script src="../../../JS/Dashboard/RegisterCustomer/regCts.js"></script>
+  <script src="../../../JS/Common/common.js"></script>
 </body>
 
 </html>

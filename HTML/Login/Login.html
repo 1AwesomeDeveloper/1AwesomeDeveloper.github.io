@@ -17,23 +17,12 @@
         <h1 class="heading" id="heading">Welcome</h1>
         <div  id="button">
             <div>
-                <button id="Customer" onclick="loadContent('customer')" class="button">Customer</button>
-            </div>
-            <div>
                 <button id="Developer" onclick="loadContent('developer')" class="button">Developer</button>
             </div>
         </div>
 
         <div id="content">
             <div id="lrbtn">
-                <div id="customerbtn">
-                    <div>
-                        <button onclick="login('customer')" class="button">Sign-In</button>
-                    </div>
-                    <div>
-                        <button onclick="register('customer')" class="button">Sign-Up</button>
-                    </div>
-                </div>
                 <div id="developerbtn">
                     <div>
                         <button onclick="login('developer')" class="button">Sign-In</button>
@@ -45,18 +34,6 @@
             </div>
 
             <div id="reg">
-                <div id="customerreg">
-                    <form id="CRForm">
-                        <input type="email" class="button" name="email" placeholder="E-Mail">
-                        <input type="text" class="button" name="name" placeholder="Full Name">
-                        <input type="number" class="button" maxlength="10" minlength="10" name="phNumber" placeholder="Mobile">
-                        <input type="password" class="button" minlength="8" name="password" placeholder="Password">
-                        <input type="password" class="button" minlength="8" name="confPassword" placeholder="Conf. Password">
-                    </form>
-                    <div>
-                        <button onclick="registerC()" class="button">Sign-Up</button>
-                    </div>
-                </div>
 
                 <div id="developerreg">
                     <form id="DRForm">
@@ -72,16 +49,6 @@
                 </div>
             </div>
             <div id="log">
-                <div id="customerlog">
-                    <form id="CLForm">
-                        <input type="email" class="button" name="email" placeholder="E-Mail">
-                        <input type="password" class="button" minlength="8" name="password" placeholder="Password">
-                    </form>
-                    <div>
-                        <button onclick="loginC()" class="button">Sign-In</button>
-                    </div>
-                </div>
-
                 <div id="developerlog">
                     <form id="DLForm">
                         <input type="email" class="button" name="email" placeholder="E-Mail">
@@ -94,14 +61,6 @@
             </div>
 
             <div id="otp">
-                <div id="COtp">
-                    <div>
-                        <input type="number" class="button" name="otp" placeholder="OTP" id="customerOtp">
-                    </div>
-                    <div>
-                        <button onclick="sendOtp('customer')" class="button">Submit</button>
-                    </div>
-                </div>
                 <div id="DOtp">
                     <div>
                         <input type="number" class="button" name="otp" placeholder="OTP" id="developerOtp">

@@ -1,11 +1,10 @@
-const customer = document.getElementById('Customer')
 const developer = document.getElementById('Developer')
 const content = document.getElementById('content')
 const button = document.getElementById('button')
 const heading = document.getElementById('heading')
 
 function loadContent(value){
-    heading.innerHTML = value
+    heading.innerHTML = 'Developer'
     document.getElementById('loader').style.display ='none'
     button.style.display = 'none'
     content.style.display = 'block'
@@ -13,14 +12,6 @@ function loadContent(value){
     document.getElementById('log').style.display = 'none'
     document.getElementById('lrbtn').style.display = 'block'
     document.getElementById('otp').style.display = 'none'
-    if(value == 'customer'){
-        document.getElementById('developerbtn').style.display = 'none'
-        document.getElementById('customerbtn').style.display = 'block'
-    } else if(value == 'developer'){
-        document.getElementById('customerbtn').style.display = 'none'
-        document.getElementById('developerbtn').style.display = 'block'
-    }
-
     document.getElementById('back').style.display = 'block'
 }
 
@@ -34,14 +25,7 @@ function register(value){
     document.getElementById('lrbtn').style.display = 'none'
     document.getElementById('log').style.display = 'none'
     document.getElementById('reg').style.display = 'block'
-    if(value == 'customer'){
-        document.getElementById('customerreg').style.display = 'block'
-        document.getElementById('developerreg').style.display = 'none'
-    } else if( value == 'developer'){
-        document.getElementById('customerreg').style.display = 'none'
-        document.getElementById('developerreg').style.display = 'block'
-    }
-
+    document.getElementById('developerreg').style.display = 'block'
     document.getElementById('back').style.display = 'block'
 }
 
@@ -55,32 +39,9 @@ function back(){
     document.getElementById('log').style.display = 'none'
     document.getElementById('lrbtn').style.display = 'none'
     document.getElementById('back').style.display = 'none'
-    document.getElementById('CLForm').reset()
-    document.getElementById('CRForm').reset()
     document.getElementById('DLForm').reset()
     document.getElementById('DRForm').reset()
 
-}
-
-function loginC(){
-    
-    const data = createData('CLForm')
-    console.log(data)
-    const valid = ValidateEmail(data.email)
-    if(!valid || !data.email || !data.password){
-        errormsg('Please Enter valid Email and password')
-        console.log('we are in error')
-        return null
-    }
-    
-    let body = {
-        url:'https://drone-management-api-ankit1998.herokuapp.com/customer/login',
-        data:data
-    }
-
-    console.log(data)
-    loading()
-    loginReq(body, 'customer')
 }
 
 function loginD(){
@@ -102,40 +63,6 @@ function loginD(){
     console.log(data)
     loading()
     loginReq(body, 'developer')
-}
-
-function registerC(){
-    const data = createData('CRForm')
-
-    console.log(data)
-    const valid = ValidateEmail(data.email)
-    if(!data.email||!data.name||!data.phNumber||!data.password||!data.confPassword){
-        errormsg('Please fill all feilds.')
-        return 0
-    }
-    if(!valid){
-        errormsg('Enter a Valid Email')
-        return 0
-    }
-
-    if((data.phNumber + "").length != '10'){
-        console.log(data.phNumber.length)
-        errormsg('Please enter an valid Mobile of 10 digits')
-        return 0
-    }
-
-    if(data.password != data.confPassword){
-        errormsg('Password and Confirm Password are not same.')
-        return 0
-    }
-
-    let body = {
-        url:'https://drone-management-api-ankit1998.herokuapp.com/customer/register',
-        data:data
-    }
-
-    loading()
-    registerreq(body, 'customer')
 }
 
 function registerD(){
@@ -186,19 +113,11 @@ async function loginReq(body, value){
             return
         }
 
-            content.style.display = 'block'
-            document.getElementById('loader').style.display = 'none'
-            document.getElementById('otp').style.display = 'block'
-        
-        if(value == 'customer'){
-            document.getElementById('COtp').style.display = 'block'
-            document.getElementById('DOtp').style.display = 'none'
-            document.getElementById('CLForm').reset()
-        } else {
-            document.getElementById('COtp').style.display = 'none'
-            document.getElementById('DOtp').style.display = 'block'
-            document.getElementById('DLForm').reset()
-        }
+        content.style.display = 'block'
+        document.getElementById('loader').style.display = 'none'
+        document.getElementById('otp').style.display = 'block'
+        document.getElementById('DOtp').style.display = 'block'
+        document.getElementById('DLForm').reset()
         console.log(response.data)
         let tokenName = `DronePoint${value}LoginToken`
         localStorage.setItem(tokenName,response.data.loginToken)
@@ -211,7 +130,7 @@ async function loginReq(body, value){
     })
 }
 
-function registerreq(body, value){
+function registerreq(body){
     axios({
         method:'post',
         url:body.url,
@@ -225,19 +144,19 @@ function registerreq(body, value){
             document.getElementById('reg').style.display = 'block'
             return 0
         }
-        
-        if(value == 'customer'){
-            document.getElementById('CRForm').reset()
-        } else {
-            document.getElementById('DRForm').reset()
-        }
-
+        document.getElementById('DRForm').reset()
         successmsg(response.data.message+'<br> Don"t press back you will be redirected shortly')
         setTimeout(()=>{location.reload()},10000)
     })
     .catch(e => {
         console.log(e)
-        errormsg('Something went Wrong regresh and try agian')
+        if(e.response.data.error.message)
+            errormsg(e.response.data.error.message)
+        else
+            errormsg('Something went Wrong regresh and try agian')
+
+        document.getElementById('loader').style.display = 'none'
+        document.getElementById('reg').style.display = 'block'
     })
 }
 
@@ -264,9 +183,7 @@ function sendOtp(value){
         successmsg(response.data.message + '<br>Dont press back or refresh you will be redirected shortly')
 
         setTimeout(() => {
-            if(value == 'developer'){
                 window.location.href = '../Dashboard/dashboard.html'
-            }
         }, 5000);
     }).catch(e => {
         console.log(e)
@@ -307,14 +224,7 @@ function displayLogin(value){
         document.getElementById('lrbtn').style.display = 'none'
         document.getElementById('reg').style.display = 'none'
         document.getElementById('log').style.display = 'block'
-        if(value == 'customer'){
-            document.getElementById('customerlog').style.display = 'block'
-            document.getElementById('developerlog').style.display = 'none'
-        }  else if( value == 'developer'){
-            document.getElementById('customerlog').style.display = 'none'
-            document.getElementById('developerlog').style.display = 'block'
-        }
-
+        document.getElementById('developerlog').style.display = 'block'
         document.getElementById('back').style.display = 'block'
 }
 

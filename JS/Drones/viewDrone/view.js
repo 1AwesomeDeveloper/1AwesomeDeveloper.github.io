@@ -110,10 +110,6 @@ function writeToPage(data) {
                     <div>${data.modal}</div>
                 </div>
                 <div>
-                    <div>Serial No.</div>
-                    <div>${data.serialNumber}</div>
-                </div>
-                <div>
                     <div>Assigned To</div>
                     <div>${data.assignedTo}</div>
                 </div>
@@ -127,49 +123,10 @@ function writeToPage(data) {
                     <div>${dateString}</div>
                 </div>
                 <div>
-                    <div>Batch</div>
-                    <div>${data.manufactringBatch}</div>
-                </div>
-                <div>
-                    <div>Shift</div>
-                    <div>${data.manufactringShift}</div>
-                </div>
-            </div>
-            <hr>
-            <h3>Hardware</h3>
-            <hr>
-            <div class="grid3">
-                <div>
-                    <div>Make</div>
-                    <div>${data.hardMake}</div>
-                </div>
-                <div>
-                    <div>Vesion</div>
-                    <div>${data.hardVersion}</div>
-                </div>
-                <div>
-                    <div>Serial Number</div>
-                    <div>${data.hardSerialNumber}</div>
-                </div>
-            </div>
-            <hr>
-            <h3>Software</h3>
-            <hr>
-            <div class="grid3">
-                <div>
-                    <div>Make</div>
-                    <div>${data.softMake}</div>
-                </div>
-                <div>
-                    <div>Vesion</div>
-                    <div>${data.softVersion}</div>
-                </div>
-                <div>
-                    <div>Serial Number</div>
-                    <div>${data.softSerialNumber}</div>
+                    <div>Flight Controller Number</div>
+                    <div>${data.flightControllerNumber}</div>
                 </div>
             </div>`
-    console.log('we are here')
 
     const keyregistry = document.getElementById('keyregistry')
     if (!data.keyRegistry[0]) {
