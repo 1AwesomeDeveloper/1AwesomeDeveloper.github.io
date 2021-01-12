@@ -11,6 +11,11 @@ function registerreq(){
         errormsg('Please fill all the feilds.')
         return 0
       }
+
+      if(formData.elements[i].name == 'imagePic'){
+        formData.append('imagePic', formData.elements[i].files[0])
+      }
+
       formData.append(Form.elements[i].name, Form.elements[i].value) 
   }
   
