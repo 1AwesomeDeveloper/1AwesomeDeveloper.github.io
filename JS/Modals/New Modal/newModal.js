@@ -1,19 +1,23 @@
-let formData = new FormData()
+
 
 function registerreq(){
-  
+  const formData = new FormData()
   const From = document.getElementById('Form')
   var x = Form.elements.length;
   //const formData = new FormData
+  
   for(let i =0;i < x;i++){
+    console.log(Form.elements[i].name)
       if(!Form.elements[i] || Form.elements[i].value == ""){
         console.log(Form.elements[i].value)
         errormsg('Please fill all the feilds.')
         return 0
       }
 
-      if(formData.elements[i].name == 'imagePic'){
-        formData.append('imagePic', formData.elements[i].files[0])
+      if(From.elements[i].name == 'imagePic'){
+        console.log(Form.elements[i].files[0])
+        formData.append('imagePic', Form.elements[i].files[0])
+        continue
       }
 
       formData.append(Form.elements[i].name, Form.elements[i].value) 
@@ -22,7 +26,7 @@ function registerreq(){
   loading()
   axios({
     method:'post',
-    url:'https://drone-management-api-ankit1998.herokuapp.com/drone/modalRegestration',
+    url:'http://localhost:3000/drone/modalRegestration',
     headers:{
       auth:localStorage.getItem(`DronePointdeveloperPermanentToken`),
       'Content-Type': 'multipart/form-data'
@@ -35,7 +39,8 @@ function registerreq(){
       errormsg(response.data.error.message)
       return 0
     }
-
+    document.getElementById('Form').reset()
+    unloading()
     successmsg(response.data.message)
   })
   .catch(e =>{
