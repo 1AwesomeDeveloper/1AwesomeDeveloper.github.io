@@ -8,7 +8,7 @@ function getDrones() {
     method: 'get',
     url: 'https://drone-management-api-ankit1998.herokuapp.com/drone/viewModals',
     headers: {
-      auth: localStorage.getItem('DronePointdeveloperPermanentToken')
+      auth: myStorage.getItem('DronePointdeveloperPermanentToken')
     }
   }).then(response => {
     console.log(response)
@@ -185,7 +185,7 @@ function deleteModal(_id) {
     method: 'delete',
     url: `https://drone-management-api-ankit1998.herokuapp.com/drone/removeModal/${_id}`,
     headers: {
-      auth: localStorage.getItem('DronePointdeveloperPermanentToken')
+      auth: myStorage.getItem('DronePointdeveloperPermanentToken')
     }
   }).then(response => {
     if (response.data.error)
@@ -200,8 +200,8 @@ function deleteModal(_id) {
 }
 
 function firmware(id) {
-  localStorage.setItem('dmodalId', id)
-  localStorage.setItem('modalNo', document.getElementById('modalNo').innerHTML)
+  myStorage.setItem('dmodalId', id)
+  myStorage.setItem('modalNo', document.getElementById('modalNo').innerHTML)
   window.location.href = './Firmware/firmware.html'
 }
 

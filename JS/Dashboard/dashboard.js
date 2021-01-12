@@ -8,7 +8,7 @@ function getProfile() {
     method: 'get',
     url: `https://drone-management-api-ankit1998.herokuapp.com/developer/profile`,
     headers: {
-      auth: localStorage.getItem('DronePointdeveloperPermanentToken')
+      auth: myStorage.getItem('DronePointdeveloperPermanentToken')
     }
   }).then(response => {
     console.log(response)
@@ -33,11 +33,11 @@ function deleteAcc() {
     method: 'delete',
     url: `https://drone-management-api-ankit1998.herokuapp.com/developer//deleteAccount`,
     headers: {
-      auth: localStorage.getItem('DronePointdeveloperPermanentToken')
+      auth: myStorage.getItem('DronePointdeveloperPermanentToken')
     }
   }).then(response => {
     console.log(response)
-    localStorage.removeItem('DronePointdeveloperPermanentToken')
+    myStorage.removeItem('DronePointdeveloperPermanentToken')
     successmsg(response.data.message + '. Please dont press back or refresh you will be redirected.')
     setTimeout(() => {
       window.location.replace('../Login/Login.html')

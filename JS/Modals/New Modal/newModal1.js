@@ -23,7 +23,7 @@ function registerreq(){
   axios({
     method:'post',
     headers:{
-      auth:localStorage.getItem(`DronePointdeveloperPermanentToken`),
+      auth:myStorage.getItem(`DronePointdeveloperPermanentToken`),
       
     }
   })
@@ -82,19 +82,19 @@ const themeMap = {
     solar: "dark"
   };
   
-  const theme = localStorage.getItem('theme')
+  const theme = myStorage.getItem('theme')
     || (tmp = Object.keys(themeMap)[0],
-        localStorage.setItem('theme', tmp),
+        myStorage.setItem('theme', tmp),
         tmp);
   const bodyClass = document.body.classList;
   bodyClass.add(theme);
   
   function toggleTheme() {
-    const current = localStorage.getItem('theme');
+    const current = myStorage.getItem('theme');
     const next = themeMap[current];
   
     bodyClass.replace(current, next);
-    localStorage.setItem('theme', next);
+    myStorage.setItem('theme', next);
   }
   
   document.getElementById('themeButton').onclick = toggleTheme;

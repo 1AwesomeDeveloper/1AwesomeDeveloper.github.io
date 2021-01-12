@@ -120,7 +120,7 @@ async function loginReq(body, value){
         document.getElementById('DLForm').reset()
         console.log(response.data)
         let tokenName = `DronePoint${value}LoginToken`
-        localStorage.setItem(tokenName,response.data.loginToken)
+        myStorage.setItem(tokenName,response.data.loginToken)
         successmsg(response.data.message)
         
     })
@@ -162,11 +162,11 @@ function registerreq(body){
 
 function sendOtp(value){
     loading()
-    console.log(localStorage.getItem(`DronePoint${value}LoginToken`))
+    console.log(myStorage.getItem(`DronePoint${value}LoginToken`))
     axios({
          method:'post',
          url:`https://drone-management-api-ankit1998.herokuapp.com/${value}/otpValidation`,
-         headers:{loingauth:localStorage.getItem(`DronePoint${value}LoginToken`)},
+         headers:{loingauth:myStorage.getItem(`DronePoint${value}LoginToken`)},
          data:{otp:document.getElementById(`${value}Otp`).value}
     }).then(response =>{
         console.log(response)
@@ -177,8 +177,8 @@ function sendOtp(value){
             return 0
         }
 
-        localStorage.setItem(`DronePoint${value}PermanentToken`, response.data.accessToken)
-        localStorage.removeItem(`DronePoint${value}LoginToken`)
+        myStorage.setItem(`DronePoint${value}PermanentToken`, response.data.accessToken)
+        myStorage.removeItem(`DronePoint${value}LoginToken`)
         console.log(`DronePoint${value}PermanentToken`)
         successmsg(response.data.message + '<br>Dont press back or refresh you will be redirected shortly')
 
@@ -192,14 +192,14 @@ function sendOtp(value){
 }
 
 function checkLogin(value){
-    if(!localStorage.getItem(`DronePoint${value}PermanentToken`)){
+    if(!myStorage.getItem(`DronePoint${value}PermanentToken`)){
         displayLogin(value)
         return 0
     }
     axios({
          method:'get',
          url:`https://drone-management-api-ankit1998.herokuapp.com/${value}/profile`,
-         headers:{auth:localStorage.getItem(`DronePoint${value}PermanentToken`)},
+         headers:{auth:myStorage.getItem(`DronePoint${value}PermanentToken`)},
     }).then(response =>{
         console.log(response)
         if(response.data.error){
@@ -219,7 +219,7 @@ function checkLogin(value){
 }
 
 function displayLogin(value){
-        localStorage.removeItem(`DronePoint${value}PermanentToken`)
+        myStorage.removeItem(`DronePoint${value}PermanentToken`)
         document.getElementById('loader').style.display ='none'
         document.getElementById('lrbtn').style.display = 'none'
         document.getElementById('reg').style.display = 'none'

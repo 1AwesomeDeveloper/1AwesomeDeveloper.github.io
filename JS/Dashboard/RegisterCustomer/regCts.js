@@ -37,7 +37,7 @@ function registerreq(body){
         method:'post',
         url:body.url,
         headers:{
-            auth:localStorage.getItem('DronePointdeveloperPermanentToken')
+            auth:myStorage.getItem('DronePointdeveloperPermanentToken')
         },
         data:body.data
     })

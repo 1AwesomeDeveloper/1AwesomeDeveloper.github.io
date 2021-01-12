@@ -5,13 +5,13 @@ window.onload = () => {
 }
 
 function loadDrone() {
-    const id = localStorage.getItem('dpdroneId')
+    const id = myStorage.getItem('dpdroneId')
     document.getElementById('delete').innerHTML = `<i class="fas fa-trash-alt fa-2x" onclick="deregister('${id}')"></i>`
     axios({
         method: 'get',
         url: `https://drone-management-api-ankit1998.herokuapp.com/drone/droneDetails/${id}`,
         headers: {
-            auth: localStorage.getItem('DronePointdeveloperPermanentToken')
+            auth: myStorage.getItem('DronePointdeveloperPermanentToken')
         }
     }).then(response => {
         console.log(response)
@@ -35,7 +35,7 @@ function deregister(id) {
         method: 'delete',
         url: `https://drone-management-api-ankit1998.herokuapp.com/drone/deRegisterDrone/${id}`,
         headers: {
-            auth: localStorage.getItem('DronePointdeveloperPermanentToken')
+            auth: myStorage.getItem('DronePointdeveloperPermanentToken')
         }
     }).then(response => {
         console.log(response)
@@ -44,7 +44,7 @@ function deregister(id) {
             errormsg(response.data.error.message)
             return 0
         }
-        localStorage.removeItem('dpdroneId')
+        myStorage.removeItem('dpdroneId')
         successmsg('Your Drone has been deregistred pelase dont press back or refresh you will be redirected')
         setTimeout(() => {
             window.location.replace('./../Drones.html')
@@ -88,7 +88,7 @@ function unloading() {
 
 
 function writeToPage(data) {
-    const id = localStorage.getItem('dpdroneId')
+    const id = myStorage.getItem('dpdroneId')
     let url
     document.getElementById('droneNo').innerHTML = data.droneNo
     let date = new Date(data.manufactringDate)
@@ -136,7 +136,7 @@ function writeToPage(data) {
     } else {
         count = data.keyRegistry.length
         data.keyRegistry.forEach(d => {
-            url = `https://drone-management-api-ankit1998.herokuapp.com/developer/downloadKey?id=${id}&token=${localStorage.getItem('DronePointdeveloperPermanentToken')}&kid=${d._id}`
+            url = `https://drone-management-api-ankit1998.herokuapp.com/developer/downloadKey?id=${id}&token=${myStorage.getItem('DronePointdeveloperPermanentToken')}&kid=${d._id}`
             
             date = new Date(d.time)
             dateString = date.toDateString()
@@ -161,7 +161,7 @@ function writeToPage(data) {
     } else {
         count = data.logRegistry.length
         data.logRegistry.forEach(d => {
-            url = `http://drone-management-api-ankit1998.herokuapp.com/developer/downloadLog?id=${id}&token=${localStorage.getItem('DronePointdeveloperPermanentToken')}&lid=${d._id}`
+            url = `http://drone-management-api-ankit1998.herokuapp.com/developer/downloadLog?id=${id}&token=${myStorage.getItem('DronePointdeveloperPermanentToken')}&lid=${d._id}`
             
             date = new Date(d.time)
             dateString = date.toDateString()

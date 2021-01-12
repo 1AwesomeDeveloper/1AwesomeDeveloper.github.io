@@ -1,3 +1,5 @@
+const myStorage = window.sessionStorage
+
 function logout(home){
     warnmsg('Please wait we are loging you out.')
     loading()
@@ -5,11 +7,11 @@ function logout(home){
       method:'get',
       url:`https://drone-management-api-ankit1998.herokuapp.com/developer/logout`,
       headers:{
-        auth:localStorage.getItem('DronePointdeveloperPermanentToken')
+        auth:myStorage.getItem('DronePointdeveloperPermanentToken')
       }
     }).then(response =>{
         console.log(response)
-        localStorage.removeItem('DronePointdeveloperPermanentToken')
+        myStorage.removeItem('DronePointdeveloperPermanentToken')
         successmsg(response.data.message + '. Please dont press back or refresh you will be redirected.')
         setTimeout(() => {
           window.location.replace(home)
@@ -26,7 +28,7 @@ function logout(home){
         method:'get',
         url:`https://drone-management-api-ankit1998.herokuapp.com/developer/profile`,
         headers:{
-          auth:localStorage.getItem('DronePointdeveloperPermanentToken')
+          auth:myStorage.getItem('DronePointdeveloperPermanentToken')
         }
       }).then(response =>{
           if(response.data.error)
@@ -47,19 +49,19 @@ function logout(home){
     solar: "dark"
   };
   
-  const theme = localStorage.getItem('theme')
+  const theme = myStorage.getItem('theme')
     || (tmp = Object.keys(themeMap)[0],
-        localStorage.setItem('theme', tmp),
+        myStorage.setItem('theme', tmp),
         tmp);
   const bodyClass = document.body.classList;
   bodyClass.add(theme);
   
   function toggleTheme() {
-    const current = localStorage.getItem('theme');
+    const current = myStorage.getItem('theme');
     const next = themeMap[current];
   
     bodyClass.replace(current, next);
-    localStorage.setItem('theme', next);
+    myStorage.setItem('theme', next);
   }
   
   document.getElementById('themeButton').onclick = toggleTheme;

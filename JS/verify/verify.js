@@ -11,7 +11,7 @@ function loadUnverified(){
         method:'get',
         url:`https://drone-management-api-ankit1998.herokuapp.com/developer/unverifiedAccounts`,
         headers:{
-          auth:localStorage.getItem('DronePointdeveloperPermanentToken')
+          auth:myStorage.getItem('DronePointdeveloperPermanentToken')
         }
     }).then(response =>{
             if(!response.data.unverifiedDev[0]){
@@ -64,7 +64,7 @@ function verify(value, id){
         method:'get',
         url:`https://drone-management-api-ankit1998.herokuapp.com/developer/verify${value}/${id}`,
         headers:{
-          auth:localStorage.getItem('DronePointdeveloperPermanentToken')
+          auth:myStorage.getItem('DronePointdeveloperPermanentToken')
         }
     }).then(response =>{
         console.log(response)

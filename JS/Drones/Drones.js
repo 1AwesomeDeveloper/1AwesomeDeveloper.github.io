@@ -8,7 +8,7 @@ function getDrones() {
     method: 'get',
     url: 'https://drone-management-api-ankit1998.herokuapp.com/drone/viewDrones',
     headers: {
-      auth: localStorage.getItem('DronePointdeveloperPermanentToken')
+      auth: myStorage.getItem('DronePointdeveloperPermanentToken')
     }
   }).then(response => {
     console.log(response)
@@ -32,7 +32,7 @@ function getDrones() {
 }
 
 function view(id) {
-  localStorage.setItem('dpdroneId', id)
+  myStorage.setItem('dpdroneId', id)
   window.location.href = "./viewDrone/view.html"
 }
 

@@ -3,11 +3,11 @@ let id
 window.onload = () => {
   checkProfile('../../Login/Login.html')
   loading()
-  document.getElementById('modalNo').innerHTML = 'Modal Number: ' + localStorage.getItem('modalNo')
-  id = localStorage.getItem('dmodalId')
+  document.getElementById('modalNo').innerHTML = 'Modal Number: ' + myStorage.getItem('modalNo')
+  id = myStorage.getItem('dmodalId')
   getallFirmware()
 
-  const url = `https://drone-management-api-ankit1998.herokuapp.com/drone/latestFirmwareDownload?id=${id}&token=${localStorage.getItem('DronePointdeveloperPermanentToken')}`
+  const url = `https://drone-management-api-ankit1998.herokuapp.com/drone/latestFirmwareDownload?id=${id}&token=${myStorage.getItem('DronePointdeveloperPermanentToken')}`
   document.getElementById('downLtf').href = url
 }
 
@@ -33,7 +33,7 @@ function upload() {
     method: 'post',
     url: `https://drone-management-api-ankit1998.herokuapp.com/drone/uploadFirmware`,
     headers: {
-      auth: localStorage.getItem('DronePointdeveloperPermanentToken')
+      auth: myStorage.getItem('DronePointdeveloperPermanentToken')
     },
     data: form
   }).then(res => {
@@ -58,7 +58,7 @@ function getallFirmware() {
     method: 'get',
     url: `https://drone-management-api-ankit1998.herokuapp.com/drone/allFirmware/${id}`,
     headers: {
-      auth: localStorage.getItem('DronePointdeveloperPermanentToken')
+      auth: myStorage.getItem('DronePointdeveloperPermanentToken')
     }
   }).then(res => {
     console.log(res)
@@ -85,7 +85,7 @@ function loadregistry(data) {
     reg.innerHTML = `<div style="text-align: center;"><p>Drone is not accessed till now</p></div>`
   } else {
     data.forEach(firm => {
-      url = `https://drone-management-api-ankit1998.herokuapp.com/drone/latestFirmwareDownload?id=${id}&token=${localStorage.getItem('DronePointdeveloperPermanentToken')}&fid=${firm._id}`
+      url = `https://drone-management-api-ankit1998.herokuapp.com/drone/latestFirmwareDownload?id=${id}&token=${myStorage.getItem('DronePointdeveloperPermanentToken')}&fid=${firm._id}`
       date = new Date(firm.time)
       dateString = date.toDateString()
       time = date.toTimeString()
