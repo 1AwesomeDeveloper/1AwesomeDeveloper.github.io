@@ -1,3 +1,5 @@
+const myStorage = window.sessionStorage
+
 const developer = document.getElementById('Developer')
 const content = document.getElementById('content')
 const button = document.getElementById('button')

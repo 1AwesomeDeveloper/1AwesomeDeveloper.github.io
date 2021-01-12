@@ -1,3 +1,5 @@
+const myStorage = window.sessionStorage
+
 window.onload = ()=>{
     successmsg('It will take a minute to load modals for selection')
     getModals()
