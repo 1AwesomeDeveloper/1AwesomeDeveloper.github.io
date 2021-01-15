@@ -18,6 +18,7 @@ function getModals(){
         response.data.modalNames.forEach(modal =>{
             select.innerHTML += `<option value="${modal.modalName}">${modal.modalName}</option>`
         })
+        document.getElementById('error').style.display = 'none'
     }).catch(e=>{
         console.log(e)
         console.log(e.response)
