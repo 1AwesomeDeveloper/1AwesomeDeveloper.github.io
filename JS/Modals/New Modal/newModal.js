@@ -26,7 +26,7 @@ function registerreq(){
   loading()
   axios({
     method:'post',
-    url:'http://localhost:3000/drone/modalRegestration',
+    url:'https://drone-management-api-ankit1998.herokuapp.com/drone/modalRegestration',
     headers:{
       auth:myStorage.getItem(`DronePointdeveloperPermanentToken`),
       'Content-Type': 'multipart/form-data'
