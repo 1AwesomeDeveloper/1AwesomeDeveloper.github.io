@@ -24,7 +24,7 @@ function register(){
     }
 
     let body = {
-        url:'http://localhost:3000/developer/registerCustomer',
+        url:'https://drone-management-api-ankit1998.herokuapp.com/developer/registerCustomer',
         data:data
     }
 
